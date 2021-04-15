@@ -1,0 +1,32 @@
+<form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+    <label>First Name</label>
+    <input type="text"  name="fname" ngModel #v1><br>
+  
+    <label>Last Name</label>
+    <input type="text"  name="lname" ngModel #v2><br>
+    
+    <label>Email Address</label>
+    <input type="email" name="email"  ngModel #v3><br>
+
+    <button type="submit">Submit</button>
+    <button (click)="onReset(userForm)">Reset</button>
+  </form>
+
+  <mark>{{userForm.value|json}}</mark>
+  <br/><br/>
+
+  <!--To fetch the individual form fields-->
+  Summary
+  <ul>
+ <li> {{userForm.controls['fname'].value}}</li>
+ <li> {{userForm.controls['lname'].value}}</li>
+ <li> {{userForm.controls['email'].value}}</li>
+</ul>
+Summary Again
+<ul>
+  <li> {{v1.value}}</li>
+  <li> {{v2.value}}</li>
+  <li> {{v3.value}}</li>
+ </ul>
+ 
+  
